@@ -22,20 +22,21 @@ class TriviaViewController: UIViewController {
     @IBOutlet weak var questionDescriptionText: UITextField!
     
     
-    
-    @IBAction func answerchoice1(_ sender: Any) {
+    @IBAction func answer1(_ sender: UIButton) {
     }
     
     
-    @IBAction func answerchoice2(_ sender: Any) {
+    @IBAction func answer2(_ sender: UIButton) {
     }
     
     
-    @IBAction func answerchoice3(_ sender: Any) {
+    @IBAction func answer3(_ sender: UIButton) {
     }
     
-    @IBAction func answerchoice4(_ sender: Any) {
+    
+    @IBAction func answer4(_ sender: UIButton) {
     }
+    
     
     /*
      // MARK: - Navigation
