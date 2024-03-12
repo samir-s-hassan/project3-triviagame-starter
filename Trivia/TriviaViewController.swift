@@ -23,8 +23,9 @@ class TriviaViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     func displayQuestion(question: QuestionAnswer) {
-        let myString = String(index)
-        questionLabel.text = "Question " + myString
+        let questionNumber = index + 1
+        let totalQuestions = questions.count
+        questionLabel.text = "Question \(questionNumber) of \(totalQuestions)"
         typeQuestionLabel.text = question.questionType // assuming you want to display the question type
         questionDescriptionText.text = question.question
         
@@ -46,48 +47,41 @@ class TriviaViewController: UIViewController {
         checkAnswer(selectedIndex: 0)
 
     }
-    
-    @IBOutlet weak var answer1: UIButton!
+    @IBOutlet weak var answer1: UIButton! //we have the outlets so we can set the titles of these buttons to be answer choices
     
     @IBAction func answer2(_ sender: UIButton) {
         checkAnswer(selectedIndex: 1)
 
     }
-    
-    
     @IBOutlet weak var answer2: UIButton!
+    
     @IBAction func answer3(_ sender: UIButton) {
         checkAnswer(selectedIndex: 2)
 
     }
-    
     @IBOutlet weak var answer3: UIButton!
     
     @IBAction func answer4(_ sender: UIButton) {
         checkAnswer(selectedIndex: 3)
 
     }
-    
     @IBOutlet weak var answer4: UIButton!
     
     func checkAnswer(selectedIndex: Int) {
         let currentQuestion = questions[index]
         if selectedIndex == currentQuestion.correctAnswerIndex {
             // Correct answer
-            let alertController = UIAlertController(title: "Correct!", message: "Congratulations, you got it right!", preferredStyle: .alert)
-            let nextQuestionAction = UIAlertAction(title: "Next Question", style: .default) { _ in
-                // Move to the next question
-                self.moveToNextQuestion()
-            }
-            alertController.addAction(nextQuestionAction)
-            present(alertController, animated: true, completion: nil)
-        } else {
-            // Incorrect answer
-            let alertController = UIAlertController(title: "Wrong!", message: "Oops! That's the incorrect answer.", preferredStyle: .alert)
-            let tryAgainAction = UIAlertAction(title: "Try Again", style: .default, handler: nil)
-            alertController.addAction(tryAgainAction)
-            present(alertController, animated: true, completion: nil)
+            totalScore += 1 // Increment the score
         }
+        
+        let correctAnswer = currentQuestion.answers[currentQuestion.correctAnswerIndex]
+        let alertController = UIAlertController(title: selectedIndex == currentQuestion.correctAnswerIndex ? "Correct!" : "Wrong!", message: selectedIndex == currentQuestion.correctAnswerIndex ? "Congratulations, you got it right!" : "Oops! The correct answer is \(correctAnswer).", preferredStyle: .alert)
+        let nextQuestionAction = UIAlertAction(title: "Next Question", style: .default) { _ in
+            // Move to the next question
+            self.moveToNextQuestion()
+        }
+        alertController.addAction(nextQuestionAction)
+        present(alertController, animated: true, completion: nil)
     }
 
     func moveToNextQuestion() {
@@ -97,26 +91,15 @@ class TriviaViewController: UIViewController {
             let currentQuestion = questions[index]
             displayQuestion(question: currentQuestion)
         } else {
-            // If all questions have been answered, you can handle game end here
-            // For example, you can show a "Game Over" message or navigate to a different screen
-            let alertController = UIAlertController(title: "Game Over", message: "You have answered all questions!", preferredStyle: .alert)
-            let okayAction = UIAlertAction(title: "Okay", style: .default, handler: nil)
-            alertController.addAction(okayAction)
-            present(alertController, animated: true, completion: nil)
+            // If all questions have been answered, show the score
+            showScore()
         }
     }
 
-    
-    
-    
-    /*
-     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func showScore() {
+        let alertController = UIAlertController(title: "Game Over", message: "You have answered all questions!\nTotal Score: \(totalScore) / \(questions.count)\nCorrect Answers: \(totalScore)", preferredStyle: .alert)
+        let okayAction = UIAlertAction(title: "Okay", style: .default, handler: nil)
+        alertController.addAction(okayAction)
+        present(alertController, animated: true, completion: nil)
     }
-    */
-
 }
