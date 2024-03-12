@@ -15,9 +15,30 @@ class TriviaViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+    @IBOutlet weak var questionLabel: UILabel!
+    
+    @IBOutlet weak var typeQuestionLabel: UILabel!
+    
+    @IBOutlet weak var questionDescriptionText: UITextField!
+    
+    
+    
+    @IBAction func answerchoice1(_ sender: Any) {
+    }
+    
+    
+    @IBAction func answerchoice2(_ sender: Any) {
+    }
+    
+    
+    @IBAction func answerchoice3(_ sender: Any) {
+    }
+    
+    @IBAction func answerchoice4(_ sender: Any) {
+    }
+    
     /*
-    // MARK: - Navigation
+     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
