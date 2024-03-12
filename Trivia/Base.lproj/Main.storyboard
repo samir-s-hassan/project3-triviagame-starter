@@ -95,6 +95,10 @@ asdasd</string>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="answer1" destination="EaO-Hs-0zT" id="K3B-3w-cxh"/>
+                        <outlet property="answer2" destination="0gq-ix-Zam" id="BR4-6T-x8r"/>
+                        <outlet property="answer3" destination="1ZR-5e-Tce" id="NKJ-V0-GEh"/>
+                        <outlet property="answer4" destination="QNu-lS-Uxr" id="uBt-Ul-MEV"/>
                         <outlet property="questionDescriptionText" destination="yqT-lE-8dX" id="3kP-p5-fEz"/>
                         <outlet property="questionLabel" destination="2k6-Pp-uoU" id="l1f-hR-FZz"/>
                         <outlet property="typeQuestionLabel" destination="aI2-vy-CAA" id="enf-L3-EUk"/>
