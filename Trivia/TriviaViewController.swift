@@ -75,7 +75,7 @@ class TriviaViewController: UIViewController {
         }
         
         let correctAnswer = currentQuestion.answers[currentQuestion.correctAnswerIndex]
-        let alertController = UIAlertController(title: selectedIndex == currentQuestion.correctAnswerIndex ? "Correct!" : "Wrong!", message: selectedIndex == currentQuestion.correctAnswerIndex ? "Congratulations, you got it right!" : "Oops! The correct answer is \(correctAnswer).", preferredStyle: .alert)
+        let alertController = UIAlertController(title: selectedIndex == currentQuestion.correctAnswerIndex ? "Correct!" : "Wrong!", message: selectedIndex == currentQuestion.correctAnswerIndex ? "Congratulations, you got it right!\nScore: \(totalScore) / \(questions.count)" : "Oops! The correct answer is \(correctAnswer).\nScore: \(totalScore) / \(questions.count)", preferredStyle: .alert)
         let nextQuestionAction = UIAlertAction(title: "Next Question", style: .default) { _ in
             // Move to the next question
             self.moveToNextQuestion()
