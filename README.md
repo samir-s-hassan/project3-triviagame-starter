@@ -22,8 +22,10 @@ The following **optional** features are implemented:
 - [X] User can see how many questions they got correct after answering all questions
 - [X] User should be able to restart the game after they've finished answering all questions
 
-The following **additional** features are implemented:
+The following **additional** features are/will be implemented:
 
+- [X] User can track their score after each questions is answered
+- [X] User knows if they answered a question right or wrong immediately
 - [ ] I want to add a Launch Screen feature
 - [ ] I want to add a launch the app on phone feature
 - [ ] I want to add a better question textbox such that the font doesn't have to be very small
