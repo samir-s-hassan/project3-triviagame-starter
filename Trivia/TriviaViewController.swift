@@ -12,13 +12,12 @@ class TriviaViewController: UIViewController {
 
     var index = 0
     var totalScore = 0
-    var correctAnswers = 0
-
 
     override func viewDidLoad() {
         super.viewDidLoad()
         let currentQuestion = questions[index]
         displayQuestion(question: currentQuestion)
+        addGradient()
 
         // Do any additional setup after loading the view.
     }
@@ -27,7 +26,10 @@ class TriviaViewController: UIViewController {
         let totalQuestions = questions.count
         questionLabel.text = "Question \(questionNumber) of \(totalQuestions)"
         typeQuestionLabel.text = question.questionType // assuming you want to display the question type
+        questionDescriptionText.lineBreakMode = .byWordWrapping //helps the text go to next line
+        questionDescriptionText.numberOfLines = 0
         questionDescriptionText.text = question.question
+        
         
         // Set titles for answer buttons
         answer1.setTitle(question.answers[0], for: .normal)
@@ -95,11 +97,29 @@ class TriviaViewController: UIViewController {
             showScore()
         }
     }
-
+    
+    func restartGame() {
+        index = 0 // Reset the index to start from question 0
+        totalScore = 0 // Reset the score to 0
+        displayQuestion(question: questions[index]) // Display the first question
+    }
     func showScore() {
         let alertController = UIAlertController(title: "Game Over", message: "You have answered all questions!\nTotal Score: \(totalScore) / \(questions.count)\nCorrect Answers: \(totalScore)", preferredStyle: .alert)
-        let okayAction = UIAlertAction(title: "Okay", style: .default, handler: nil)
-        alertController.addAction(okayAction)
+        let restartAction = UIAlertAction(title: "Restart", style: .default) { _ in
+            self.restartGame() // Restart the game when the user taps "Restart"
+        }
+        alertController.addAction(restartAction)
         present(alertController, animated: true, completion: nil)
     }
+    
+    private func addGradient() {
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.frame = view.bounds
+        gradientLayer.colors = [UIColor(red: 0.75, green: 0.94, blue: 0.80, alpha: 1.00).cgColor,
+                                UIColor(red: 0.62, green: 0.88, blue: 0.66, alpha: 1.00).cgColor]
+        gradientLayer.startPoint = CGPoint(x: 0.5, y: 0)
+        gradientLayer.endPoint = CGPoint(x: 0.5, y: 1)
+        view.layer.insertSublayer(gradientLayer, at: 0)
+    }
+
 }
