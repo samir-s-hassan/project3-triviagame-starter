@@ -26,10 +26,7 @@ class TriviaViewController: UIViewController {
         let totalQuestions = questions.count
         questionLabel.text = "Question \(questionNumber) of \(totalQuestions)"
         typeQuestionLabel.text = question.questionType // assuming you want to display the question type
-        questionDescriptionText.lineBreakMode = .byWordWrapping //helps the text go to next line
-        questionDescriptionText.numberOfLines = 0
         questionDescriptionText.text = question.question
-        
         
         // Set titles for answer buttons
         answer1.setTitle(question.answers[0], for: .normal)
