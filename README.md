@@ -4,7 +4,7 @@ Submitted by: Samir Hassan
 
 Trivia is an app that displays a question and 4 choices. Similar to most trivia games, the User can keep track of their score as they play the game and stay aware of their correct and wrong answers. Currently, the questions are static and therefore are hard-coded. 
 
-Time spent: 4 hours spent in total
+Time spent: 3 hours spent in total
 
 ## Required Features
 
@@ -33,7 +33,7 @@ The following **additional** features are/will be implemented:
 
 ## Video Walkthrough
 
-[Guide]](https://www.loom.com/share/4b09e6f344b047dd99bb1a107ee9a4d1?sid=3be7fc91-7c09-4844-ae6a-ab41e167bae3) .
+https://www.loom.com/share/4b09e6f344b047dd99bb1a107ee9a4d1?sid=3be7fc91-7c09-4844-ae6a-ab41e167bae3
 
 ## Notes
 
