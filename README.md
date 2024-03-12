@@ -47,7 +47,7 @@ Another issue I had was with functionally thinking about how to separate the que
 
 ## License
 
-    Copyright [yyyy] [name of copyright owner]
+    Copyright 2024 Samir Hassan
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
