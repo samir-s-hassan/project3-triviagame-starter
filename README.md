@@ -31,6 +31,12 @@ The following **additional** features are/will be implemented:
 - [ ] I want to add a better question textbox such that the font doesn't have to be very small
 - [ ] I want to keep track of the score on the top right-hand corner or somewhere on the screen to make the popups less text
 
+## How to run
+
+1. Open Xcode
+2. Choose your simulator, it must be a phone e.g. iPhone 13, iPhone 14 Plus, iPhone 15 Pro, etc. 
+3. Build and run the app on Xcode (can use Command + R)
+
 ## Video Walkthrough
 
 [Video] (N/A)
